@@ -2,3 +2,11 @@
 dist
 cover.out
 .semrel/
+
+# CI generated files
+.scannerwork/
+.semrelrc
+.version-unreleased
+CHANGELOG.md
+cover.out
+*.xml
