@@ -29,14 +29,8 @@ type DefaultCommitAnalyzer struct {
 }
 
 func (da *DefaultCommitAnalyzer) Init(config map[string]string) error {
-	for k, v := range config {
-		println(k)
-		println(v)
-	}
 	minorPattern := config["minor"]
-	println(minorPattern)
 	if minorPattern != "" {
-		println("using new minor pattern")
 		minorRegexp, err := regexp.Compile(minorPattern)
 		if err != nil {
 			return err
@@ -47,7 +41,6 @@ func (da *DefaultCommitAnalyzer) Init(config map[string]string) error {
 	}
 
 	patchPattern := config["patch"]
-	println(patchPattern)
 	if patchPattern != "" {
 		patchRegexp, err := regexp.Compile(patchPattern)
 		if err != nil {
