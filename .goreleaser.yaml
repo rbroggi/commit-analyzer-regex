@@ -14,7 +14,10 @@ builds:
       - -s -w -X github.com/faceit/commit-analyzer-regex/pkg/analyzer.CAVERSION={{.Version}}
 
 archives:
-  - format: binary
+  - id: bin
+    format: binary
+    name_template: '{{ .Binary }}_v{{ .Version }}_{{ .Os }}_{{ .Arch }}'
+  - id: archive
     name_template: '{{ .Binary }}_v{{ .Version }}_{{ .Os }}_{{ .Arch }}'
 
 checksum:
