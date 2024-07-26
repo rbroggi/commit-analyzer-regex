@@ -175,6 +175,12 @@ func TestRegexAnalyzer(t *testing.T) {
 			"",
 			&semrel.Change{Major: false, Minor: false, Patch: true},
 		},
+		{
+			createRawCommit("i", `feat: Merge remote-tracking branch 'origin/master' into migration_jenkins_to_gitlab_ci_goModDefaultPipeline_phase_3`),
+			"feat",
+			"",
+			&semrel.Change{Major: false, Minor: true, Patch: false},
+		},
 	}
 
 	defaultAnalyzer := &DefaultCommitAnalyzer{}
